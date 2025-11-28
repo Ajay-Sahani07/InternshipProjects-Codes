@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+
+    <style>
+         body {
+            font-family: Arial;
+            background: #f2f2f2;
+            padding: 40px;
+        }
+        .container {
+            width: 300px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Simple Calculator</h1>
+
+        <input type="number" placeholder="Enter Number 1" id="num1"><br>
+        <input type="number" id="num2" placeholder="Enter Number 2"><br><br>
+
+        <button onclick="myAdd()">Add</button><br>
+        <button onclick="mySub()">Subtract</button><br>
+        <button onclick="myMulti()">Multiply</button><br>
+        <button onclick="myDiv()">Division</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function myAdd(){
+            let a = Number(document.getElementById("num1").value)
+            let b = Number(document.getElementById("num2").value)
+
+            let result = document.getElementById("result").innerHTML = "Result : " + (a+b)
+        }
+
+        function mySub(){
+            let a = Number(document.getElementById("num1").value)
+            let b = Number(document.getElementById("num2").value)
+
+            let result = document.getElementById("result").innerHTML = "Result : " + (a-b)
+        }
+
+         function myMulti(){
+            let a = Number(document.getElementById("num1").value)
+            let b = Number(document.getElementById("num2").value)
+
+            let result = document.getElementById("result").innerHTML = "Result : " + (a*b)
+        }
+
+        function myDiv(){
+           let a = Number(document.getElementById("num1").value)
+           let b = Number(document.getElementById("num2").value)
+
+           if(result===0){
+             let result = document.getElementById("result").innerHTML = "not divisible by zero"
+           }
+           else{
+             let result = document.getElementById("result").innerHTML = "Result : " + (a/b)
+           }
+        }
+    </script>
+</body>
+</html>

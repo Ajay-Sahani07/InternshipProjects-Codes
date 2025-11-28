@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordian</title>
+
+    <style>
+        h1{
+            text-align: center;
+        }
+        .accordian{
+            width: 600px;
+            margin: 20px auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .accordian-item{
+            width: 400px;
+            margin-bottom: 10px;
+            padding: 15px;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+        }
+
+        .accordian-content{
+            padding: 15px;
+            border: 3px  solid #ccc;
+            display: none;
+            background: #f6f6f6;
+        }
+
+        .symbol{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Accordian</h1>
+
+    <div class="accordian">
+
+        <div class="accordian-item">
+            <span>Section 1</span>
+            <span class="symbol">+</span>
+        </div>
+        <div class="accordian-content">
+            Section 1 Content Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, ea iure! Suscipit incidunt quia voluptatem culpa iste tempora nostrum blanditiis optio accusantium animi? Doloribus sit alias dolorem repellat hic quod. 
+        </div>
+
+         <div class="accordian-item">
+            <span>Section 2</span>
+            <span class="symbol">+</span>
+        </div>
+        <div class="accordian-content">
+            Section 2 Content Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, ea iure! Suscipit incidunt quia voluptatem culpa iste tempora nostrum blanditiis optio accusantium animi? Doloribus sit alias dolorem repellat hic quod. 
+        </div>
+
+         <div class="accordian-item">
+            <span>Section 3</span>
+            <span class="symbol">+</span>
+        </div>
+        <div class="accordian-content">
+            Section 3 Content Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, ea iure! Suscipit incidunt quia voluptatem culpa iste tempora nostrum blanditiis optio accusantium animi? Doloribus sit alias dolorem repellat hic quod. 
+        </div>
+
+    </div>
+
+    <script>
+        let items = document.querySelectorAll(".accordian-item")
+
+        items.forEach((item,index)=>{
+            item.addEventListener("click",function(){
+
+                let content = item.nextElementSibling
+
+                if(content.style.display ==="block"){
+                    content.style.display="none"
+                    item.querySelector(".symbol").textContent="+"
+                }
+                else{
+                    document.querySelectorAll("accordian-content").forEach(c=>c.style.display="none")
+                    document.querySelectorAll(".symbol").forEach(s=>s.textContent="+")
+
+                    content.style.display="block"
+                    item.querySelector(".symbol").textContent="-"
+                }
+            })
+        })
+    </script>
+</body>
+</html>

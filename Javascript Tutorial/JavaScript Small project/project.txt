@@ -1,0 +1,7 @@
+✔ To-Do List Project
+✔ Digital Clock
+✔ Counter App
+✔ Form Validation
+✔ Image Slider
+✔ Weather App (API)
+✔ Notes App (CRUD + LocalStorage)

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Objects</title>
+</head>
+<body>
+    <h1>Dropdown uisng objects</h1>
+    <select name="Dropdown" id="countryDropdown"></select>
+    <script>
+        let country_list = [
+            {
+                country_id: 1,
+                country_name: "India"
+            },
+            {
+                country_id: 2,
+                country_name: "USA"
+            },
+            {
+                country_id: 3,
+                country_name: "Canada"
+            }
+        ];
+
+        let dropdown = document.getElementById("countryDropdown")
+
+        country_list.forEach(country =>{
+            let option = document.createElement("option")
+            option.value = country.country_id
+            option.textContent = country.country_name
+            dropdown.appendChild(option)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Character Count</title>
+</head>
+<body>
+    <h1>Array Character and Words counting</h1>
+    <script>
+        let str = "Hello welcome to weblancer technologies"
+
+        // counting characters in a string
+        let charCount = str.replace(/\s/g,"").length
+        document.writeln("<b>Total Characters in given String:</b>",charCount +"<br>")
+        console.log("Total Characters:", charCount);
+
+        // counting total words in a string
+        let totalWords = str.trim().split(/\s/).length
+         document.writeln("<b>Total Words in given String:</b>",totalWords  +"<br>")
+        console.log("Total Words:", totalWords);
+
+        // converting firstletter of string in uppercase
+        let covertedUppercase = str
+        .split(" ")
+        .map(item => item.charAt(0).toUpperCase() 
+        + item.slice(1))
+        .join(" ")
+        document.writeln("<b>First Letter of string in uppercase:</b>",covertedUppercase +"<br>")
+        console.log("First Letter in Uppercase:", covertedUppercase);
+
+    </script>
+</body>
+</html>

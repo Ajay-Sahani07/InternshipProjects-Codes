@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Casting Example</title>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            background: #f3f3f3;
+            padding: 40px;
+        }
+        .container {
+            width: 350px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .output {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+     <h1>Type Casting</h1>
+
+    <input type="text" id="userValue" placeholder="Enetr Any Value">
+    <button onclick="convert()">Convert</button>
+
+     <div class="output" id="result">
+
+     </div>
+   </div>
+
+  
+
+   <script>
+    function convert(){
+        let value = document.getElementById("userValue").value
+
+        // type conversion
+        let numberVal = Number(value)
+        let stringVal = String(value)
+        let booleanVal = Boolean(value)
+
+        // display result
+        document.getElementById("result").innerHTML =`
+        <strong>Original Value:</strong> ${value} <br><br>
+
+        <strong>Number():</strong> ${numberVal} <br>
+        Type:${typeof numberVal} <br><br>
+
+        <strong>Number():</strong> ${stringVal} <br>
+        Type:${typeof stringVal} <br><br>
+
+        <strong>Number():</strong> ${booleanVal} <br>
+        Type:${typeof booleanVal} 
+
+
+        `
+    }
+   </script>
+</body>
+</html>

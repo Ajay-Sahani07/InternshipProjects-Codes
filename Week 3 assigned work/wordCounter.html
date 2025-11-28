@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word and Character Counter</title>
+    <style>
+        body{
+            justify-content: center;
+            display: flex;
+            padding-top: 50px;
+            background-color:white;
+        }
+        .counter-container{
+            border: 3px solid grey;
+            height: auto;
+            width: auto;
+        }
+        .header{
+            background-color: blue;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            height: 40px;
+            padding-top: 10px;
+        }
+        .footer{
+            background-color: blue;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            height: 40px; 
+            padding: 5px;
+        }
+        #textBox{
+            width: 400px;
+            height: 150px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="counter-container">
+        <div class="header">Word and Character Counter</div>
+        <textarea  id="textBox" placeholder="Type text here..."></textarea>
+        <div class="footer">
+            <span id="wordCount">0</span> Words and
+            <span id="charCount">0</span> Characters
+        </div>
+    </div>
+    <script>
+        let textBox = document.getElementById("textBox")
+        let wordCountSpan = document.getElementById("wordCount")
+        let charCountSpan = document.getElementById("charCount")
+
+        textBox.addEventListener('input',function(){
+            const text = this.value
+
+            const charCount = text.length
+            let words = text.trim().split(/\s+/)
+
+            let wordCount = 0
+            if(text.trim().length>0){
+                wordCount = words.length
+            }
+
+            wordCountSpan.textContent = wordCount
+            charCountSpan.textContent = charCount
+        })
+    </script>
+</body>
+</html>

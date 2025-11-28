@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check and Uncheck All</title>
+</head>
+<body>
+    <h1>Check and Uncheck All</h1>
+    <fieldset>
+        <legend>Select yur technical skills</legend>
+
+        <label>
+           <input type="checkbox" id="selectAll"><b> Select All</b>
+        </label><br><br>
+
+        <label>
+           <input type="checkbox" class="skill"> Asp.Net
+        </label><br><br>
+
+        <label>
+           <input type="checkbox" class="skill"> MVC
+        </label><br><br>
+
+        <label>
+           <input type="checkbox" class="skill"> JQuery
+        </label><br><br>
+
+        <label>
+           <input type="checkbox" class="skill"> WCF
+        </label><br><br>
+    </fieldset>
+
+    <script>
+        let selectAll = document.getElementById("selectAll")
+        let skillCheckboxes = document.querySelectorAll(".skill")
+
+        selectAll.addEventListener("change",function(){
+            skillCheckboxes.forEach(chk=>chk.checked =selectAll.checked)
+        })
+
+        skillCheckboxes.forEach(chk=>{
+            chk.addEventListener("change",function(){
+                let allchecked = [...skillCheckboxes].every(c=>c.checked)
+                selectAll.checked=allchecked
+            })
+        })
+    </script>
+</body>
+</html>

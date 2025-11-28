@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Truthy & Falsy Checker</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #eef1f5;
+            padding: 40px;
+        }
+        .container {
+            width: 340px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 15px;
+            padding: 12px;
+            background: #fafafa;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Truthy / Falsy Checker</h2>
+
+    <input type="text" id="valueInput" placeholder="Enter any value">
+
+    <button onclick="checkValue()">Check Value</button>
+
+    <div class="result" id="output">Result will appear here...</div>
+</div>
+
+<script>
+    function checkValue() {
+        let userValue = document.getElementById("valueInput").value;
+        
+        // Convert empty input to actual empty string
+        let processedValue = userValue === "" ? "" : userValue;
+
+        let resultMessage;
+
+        if (processedValue) {
+            resultMessage = `"${userValue}" is a TRUTHY value`;
+        } else {
+            resultMessage = `"${userValue}" is a FALSY value`;
+        }
+
+        document.getElementById("output").innerHTML = resultMessage;
+    }
+</script>
+
+</body>
+</html>
